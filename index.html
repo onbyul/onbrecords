@@ -40,6 +40,7 @@
         font-size: 28px;
         font-weight: 700;
         color: #1a1a1a;
+        text-decoration: none;
     }
 
     .nav {
@@ -136,6 +137,8 @@
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
         cursor: pointer;
+        text-decoration: none;
+        color: #1a1a1a;
     }
 
     .artist-card:hover {
@@ -167,6 +170,8 @@
         overflow: hidden;
         cursor: pointer;
         transition: transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
     }
 
     .album-card:hover {
@@ -176,9 +181,14 @@
     .album-cover {
         width: 100%;
         height: 200px;
-        background-size: cover;
-        background-position: center;
+        object-fit: cover;
         border-radius: 15px;
+        background-color: #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: #666;
     }
 
     .album-overlay {
@@ -260,59 +270,6 @@
         margin-top: 80px;
     }
 
-    /* Album Page Styles */
-    .album-page {
-        display: none;
-        padding: 80px 50px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .album-detail {
-        display: flex;
-        gap: 50px;
-        align-items: flex-start;
-    }
-
-    .album-detail-cover {
-        width: 300px;
-        height: 300px;
-        border-radius: 15px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .album-info h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-    }
-
-    .album-info h2 {
-        font-size: 1.5rem;
-        color: #666;
-        margin-bottom: 20px;
-    }
-
-    .album-info p {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-    }
-
-    .back-btn {
-        background: #9ACD32;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        margin-bottom: 30px;
-    }
-
-    .back-btn:hover {
-        background: #8FBC8F;
-    }
-
     @media (max-width: 768px) {
         .header {
             flex-direction: column;
@@ -331,237 +288,145 @@
         .section {
             padding: 50px 20px;
         }
-
-        .album-detail {
-            flex-direction: column;
-            text-align: center;
-        }
     }
 </style>
 ```
 
 </head>
 <body>
-    <!-- Main Page -->
-    <div id="main-page">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo english">ONB Records</div>
-            <nav class="nav">
-                <a href="#about">회사소개</a>
-                <a href="#artists">아티스트</a>
-                <a href="#albums">음반</a>
-                <a href="#services">사업영역</a>
-            </nav>
-        </header>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo english">ONB Records</a>
+        <nav class="nav">
+            <a href="#about">회사소개</a>
+            <a href="#artists">아티스트</a>
+            <a href="#albums">음반</a>
+            <a href="#services">사업영역</a>
+        </nav>
+    </header>
 
 ```
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="hero-title english typing-animation">on the b-side</h1>
-        <p class="hero-subtitle">
-            ONB Records는 비주류를 추구하지만,<br>
-            누구보다 아티스트들에게 적극적인 음반사입니다.
+<!-- Hero Section -->
+<section class="hero">
+    <h1 class="hero-title english typing-animation">on the b-side</h1>
+    <p class="hero-subtitle">
+        ONB Records는 비주류를 추구하지만,<br>
+        누구보다 아티스트들에게 적극적인 음반사입니다.
+    </p>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <h2 class="section-title">회사 소개</h2>
+    <div class="about-content">
+        <p>
+            ONB Records는 독특하고 창의적인 음악을 추구하는 아티스트들과 함께 성장하는 음반사입니다. 
+            우리는 주류 음악 시장에서 찾아보기 어려운 독창적인 사운드와 메시지를 가진 아티스트들을 
+            발굴하고 지원합니다. B-side처럼 숨겨진 보석 같은 음악들을 세상에 선보이는 것이 우리의 사명입니다.
         </p>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">회사 소개</h2>
-        <div class="about-content">
-            <p>
-                ONB Records는 독특하고 창의적인 음악을 추구하는 아티스트들과 함께 성장하는 음반사입니다. 
-                우리는 주류 음악 시장에서 찾아보기 어려운 독창적인 사운드와 메시지를 가진 아티스트들을 
-                발굴하고 지원합니다. B-side처럼 숨겨진 보석 같은 음악들을 세상에 선보이는 것이 우리의 사명입니다.
-            </p>
-        </div>
-    </section>
+<!-- Artists Section -->
+<section id="artists" class="section">
+    <h2 class="section-title">아티스트 라인업</h2>
+    <div class="artists-grid">
+        <a href="artist-luna.html" class="artist-card">
+            <div class="artist-name">Luna</div>
+            <div class="artist-genre">Indie Pop</div>
+        </a>
+        <a href="artist-cosmic-jazz.html" class="artist-card">
+            <div class="artist-name">Cosmic Jazz Collective</div>
+            <div class="artist-genre">Jazz Fusion</div>
+        </a>
+        <a href="artist-neon-dreams.html" class="artist-card">
+            <div class="artist-name">Neon Dreams</div>
+            <div class="artist-genre">Synthwave</div>
+        </a>
+        <a href="artist-echo-chamber.html" class="artist-card">
+            <div class="artist-name">Echo Chamber</div>
+            <div class="artist-genre">Experimental Rock</div>
+        </a>
+    </div>
+</section>
 
-    <!-- Artists Section -->
-    <section id="artists" class="section">
-        <h2 class="section-title">아티스트 라인업</h2>
-        <div class="artists-grid">
-            <div class="artist-card" onclick="showArtist('luna')">
-                <div class="artist-name">Luna</div>
-                <div class="artist-genre">Indie Pop</div>
+<!-- Albums Section -->
+<section id="albums" class="section">
+    <h2 class="section-title">제작 음반</h2>
+    <div class="albums-grid">
+        <a href="album-midnight-stories.html" class="album-card">
+            <img src="images/albums/midnight-stories.jpg" alt="Midnight Stories Album Cover" class="album-cover">
+            <div class="album-overlay">
+                <div class="album-title">Midnight Stories</div>
+                <div class="album-artist">Luna</div>
+                <div class="album-date">2024.03.15</div>
             </div>
-            <div class="artist-card" onclick="showArtist('cosmic-jazz')">
-                <div class="artist-name">Cosmic Jazz Collective</div>
-                <div class="artist-genre">Jazz Fusion</div>
+        </a>
+        <a href="album-space-odyssey.html" class="album-card">
+            <img src="images/albums/space-odyssey.jpg" alt="Space Odyssey Album Cover" class="album-cover">
+            <div class="album-overlay">
+                <div class="album-title">Space Odyssey</div>
+                <div class="album-artist">Cosmic Jazz Collective</div>
+                <div class="album-date">2024.01.20</div>
             </div>
-            <div class="artist-card" onclick="showArtist('neon-dreams')">
-                <div class="artist-name">Neon Dreams</div>
-                <div class="artist-genre">Synthwave</div>
+        </a>
+        <a href="album-neon-nights.html" class="album-card">
+            <img src="images/albums/neon-nights.jpg" alt="Neon Nights Album Cover" class="album-cover">
+            <div class="album-overlay">
+                <div class="album-title">Neon Nights</div>
+                <div class="album-artist">Neon Dreams</div>
+                <div class="album-date">2023.11.08</div>
             </div>
-            <div class="artist-card" onclick="showArtist('echo-chamber')">
-                <div class="artist-name">Echo Chamber</div>
-                <div class="artist-genre">Experimental Rock</div>
+        </a>
+        <a href="album-fragments.html" class="album-card">
+            <img src="images/albums/fragments.jpg" alt="Fragments Album Cover" class="album-cover">
+            <div class="album-overlay">
+                <div class="album-title">Fragments</div>
+                <div class="album-artist">Echo Chamber</div>
+                <div class="album-date">2023.09.12</div>
             </div>
-        </div>
-    </section>
+        </a>
+    </div>
+</section>
 
-    <!-- Albums Section -->
-    <section id="albums" class="section">
-        <h2 class="section-title">제작 음반</h2>
-        <div class="albums-grid">
-            <div class="album-card" onclick="showAlbum('midnight-stories')">
-                <div class="album-cover" style="background-image: linear-gradient(45deg, #667eea 0%, #764ba2 100%);"></div>
-                <div class="album-overlay">
-                    <div class="album-title">Midnight Stories</div>
-                    <div class="album-artist">Luna</div>
-                    <div class="album-date">2024.03.15</div>
-                </div>
-            </div>
-            <div class="album-card" onclick="showAlbum('space-odyssey')">
-                <div class="album-cover" style="background-image: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);"></div>
-                <div class="album-overlay">
-                    <div class="album-title">Space Odyssey</div>
-                    <div class="album-artist">Cosmic Jazz Collective</div>
-                    <div class="album-date">2024.01.20</div>
-                </div>
-            </div>
-            <div class="album-card" onclick="showAlbum('neon-nights')">
-                <div class="album-cover" style="background-image: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);"></div>
-                <div class="album-overlay">
-                    <div class="album-title">Neon Nights</div>
-                    <div class="album-artist">Neon Dreams</div>
-                    <div class="album-date">2023.11.08</div>
-                </div>
-            </div>
-            <div class="album-card" onclick="showAlbum('fragments')">
-                <div class="album-cover" style="background-image: linear-gradient(45deg, #fa709a 0%, #fee140 100%);"></div>
-                <div class="album-overlay">
-                    <div class="album-title">Fragments</div>
-                    <div class="album-artist">Echo Chamber</div>
-                    <div class="album-date">2023.09.12</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <h2 class="section-title">주요 사업</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🎵</div>
-                <div class="service-title">음반 제작</div>
-                <div class="service-description">
-                    아티스트의 창의성을 최대한 살린 고품질 음반 제작 서비스를 제공합니다. 
-                    녹음부터 마스터링까지 전 과정을 지원합니다.
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⭐</div>
-                <div class="service-title">아티스트 매니지먼트</div>
-                <div class="service-description">
-                    아티스트의 커리어 전반을 관리하며, 마케팅, 프로모션, 
-                    공연 기획 등 종합적인 매니지먼트 서비스를 제공합니다.
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎬</div>
-                <div class="service-title">애니메이션 투자</div>
-                <div class="service-description">
-                    음악과 시각적 스토리텔링의 결합을 통해 새로운 콘텐츠를 창조하며, 
-                    혁신적인 애니메이션 프로젝트에 투자합니다.
-                </div>
+<!-- Services Section -->
+<section id="services" class="section">
+    <h2 class="section-title">주요 사업</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">🎵</div>
+            <div class="service-title">음반 제작</div>
+            <div class="service-description">
+                아티스트의 창의성을 최대한 살린 고품질 음반 제작 서비스를 제공합니다. 
+                녹음부터 마스터링까지 전 과정을 지원합니다.
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 ONB Records. All rights reserved.</p>
-        <p class="english">On the B-side, Beyond the Mainstream</p>
-    </footer>
-</div>
-
-<!-- Album Detail Pages -->
-<div id="album-midnight-stories" class="album-page">
-    <button class="back-btn" onclick="showMainPage()">← 메인으로 돌아가기</button>
-    <div class="album-detail">
-        <div class="album-detail-cover" style="background-image: linear-gradient(45deg, #667eea 0%, #764ba2 100%);"></div>
-        <div class="album-info">
-            <h1>Midnight Stories</h1>
-            <h2>Luna</h2>
-            <p><strong>발매일:</strong> 2024년 3월 15일</p>
-            <p><strong>장르:</strong> Indie Pop</p>
-            <p><strong>소개:</strong> 밤의 정적 속에서 피어나는 감성적인 이야기들을 담은 Luna의 데뷔 앨범입니다. 
-            몽환적인 멜로디와 섬세한 가사로 듣는 이의 마음을 어루만집니다.</p>
+        <div class="service-card">
+            <div class="service-icon">⭐</div>
+            <div class="service-title">아티스트 매니지먼트</div>
+            <div class="service-description">
+                아티스트의 커리어 전반을 관리하며, 마케팅, 프로모션, 
+                공연 기획 등 종합적인 매니지먼트 서비스를 제공합니다.
+            </div>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🎬</div>
+            <div class="service-title">애니메이션 투자</div>
+            <div class="service-description">
+                음악과 시각적 스토리텔링의 결합을 통해 새로운 콘텐츠를 창조하며, 
+                혁신적인 애니메이션 프로젝트에 투자합니다.
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-<div id="album-space-odyssey" class="album-page">
-    <button class="back-btn" onclick="showMainPage()">← 메인으로 돌아가기</button>
-    <div class="album-detail">
-        <div class="album-detail-cover" style="background-image: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);"></div>
-        <div class="album-info">
-            <h1>Space Odyssey</h1>
-            <h2>Cosmic Jazz Collective</h2>
-            <p><strong>발매일:</strong> 2024년 1월 20일</p>
-            <p><strong>장르:</strong> Jazz Fusion</p>
-            <p><strong>소개:</strong> 우주를 테마로 한 실험적인 재즈 퓨전 앨범으로, 
-            전통적인 재즈에 현대적인 전자음향을 결합한 혁신적인 사운드를 선보입니다.</p>
-        </div>
-    </div>
-</div>
-
-<div id="album-neon-nights" class="album-page">
-    <button class="back-btn" onclick="showMainPage()">← 메인으로 돌아가기</button>
-    <div class="album-detail">
-        <div class="album-detail-cover" style="background-image: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);"></div>
-        <div class="album-info">
-            <h1>Neon Nights</h1>
-            <h2>Neon Dreams</h2>
-            <p><strong>발매일:</strong> 2023년 11월 8일</p>
-            <p><strong>장르:</strong> Synthwave</p>
-            <p><strong>소개:</strong> 80년대 신스팝의 향수를 현대적으로 재해석한 앨범으로, 
-            네온사인이 빛나는 도시의 밤을 음악으로 그려냅니다.</p>
-        </div>
-    </div>
-</div>
-
-<div id="album-fragments" class="album-page">
-    <button class="back-btn" onclick="showMainPage()">← 메인으로 돌아가기</button>
-    <div class="album-detail">
-        <div class="album-detail-cover" style="background-image: linear-gradient(45deg, #fa709a 0%, #fee140 100%);"></div>
-        <div class="album-info">
-            <h1>Fragments</h1>
-            <h2>Echo Chamber</h2>
-            <p><strong>발매일:</strong> 2023년 9월 12일</p>
-            <p><strong>장르:</strong> Experimental Rock</p>
-            <p><strong>소개:</strong> 파편화된 현대 사회의 모습을 실험적인 록 사운드로 표현한 개념 앨범으로, 
-            혁신적인 구조와 사운드 디자인이 돋보입니다.</p>
-        </div>
-    </div>
-</div>
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 ONB Records. All rights reserved.</p>
+    <p class="english">On the B-side, Beyond the Mainstream</p>
+</footer>
 
 <script>
-    function showAlbum(albumId) {
-        document.getElementById('main-page').style.display = 'none';
-        document.getElementById('album-' + albumId).style.display = 'block';
-    }
-
-    function showArtist(artistId) {
-        // 아티스트별 대표 앨범으로 이동
-        const artistAlbums = {
-            'luna': 'midnight-stories',
-            'cosmic-jazz': 'space-odyssey',
-            'neon-dreams': 'neon-nights',
-            'echo-chamber': 'fragments'
-        };
-        showAlbum(artistAlbums[artistId]);
-    }
-
-    function showMainPage() {
-        document.querySelectorAll('.album-page').forEach(page => {
-            page.style.display = 'none';
-        });
-        document.getElementById('main-page').style.display = 'block';
-    }
-
     // 타이핑 애니메이션 효과
     document.addEventListener('DOMContentLoaded', function() {
         const typingElement = document.querySelector('.typing-animation');
