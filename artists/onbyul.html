@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna - ONB Records</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mosk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Pretendard', sans-serif;
+        background-color: #F8F7F4;
+        color: #1a1a1a;
+        line-height: 1.6;
+    }
+
+    .english {
+        font-family: 'Mosk', sans-serif;
+    }
+
+    /* Header */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: #F8F7F4;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a1a1a;
+        text-decoration: none;
+    }
+
+    .nav {
+        display: flex;
+        gap: 40px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+        color: #9ACD32;
+    }
+
+    /* Back Button */
+    .back-btn {
+        background: #9ACD32;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin: 30px 50px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background: #8FBC8F;
+    }
+
+    /* Artist Profile Section */
+    .artist-profile {
+        padding: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .profile-header {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+        margin-bottom: 60px;
+    }
+
+    .profile-image {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #B8E6B8 0%, #98FB98 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: #666;
+        flex-shrink: 0;
+    }
+
+    .profile-info {
+        flex: 1;
+    }
+
+    .artist-name {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
+
+    .artist-genre {
+        font-size: 1.3rem;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .info-item {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    }
+
+    .info-label {
+        font-weight: 600;
+        color: #9ACD32;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    .info-value {
+        font-size: 1.1rem;
+        color: #1a1a1a;
+    }
+
+    /* Artist Description */
+    .artist-description {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        margin-bottom: 60px;
+    }
+
+    .description-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+    }
+
+    .description-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    /* Discography Section */
+    .discography {
+        margin-top: 60px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-align: center;
+        color: #1a1a1a;
+    }
+
+    .albums-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .album-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .album-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .album-cover {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    .album-info {
+        padding: 20px;
+    }
+
+    .album-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #1a1a1a;
+    }
+
+    .album-date {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 8px;
+    }
+
+    .album-genre {
+        font-size: 0.8rem;
+        background: #B8E6B8;
+        color: #2d5a2d;
+        padding: 4px 12px;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    /* Footer */
+    .footer {
+        background: #1a1a1a;
+        color: white;
+        text-align: center;
+        padding: 50px;
+        margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .nav {
+            gap: 20px;
+        }
+
+        .back-btn {
+            margin: 20px;
+        }
+
+        .artist-profile {
+            padding: 30px 20px;
+        }
+
+        .profile-header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+        }
+
+        .artist-name {
+            font-size: 2.2rem;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .artist-description {
+            padding: 30px 20px;
+        }
+
+        .albums-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo english">ONB Records</a>
+        <nav class="nav">
+            <a href="index.html#about">회사소개</a>
+            <a href="index.html#artists">아티스트</a>
+            <a href="index.html#albums">음반</a>
+            <a href="index.html#services">사업영역</a>
+        </nav>
+    </header>
+
+```
+<!-- Back Button -->
+<a href="index.html#artists" class="back-btn">← 아티스트 목록으로</a>
+
+<!-- Artist Profile -->
+<main class="artist-profile">
+    <div class="profile-header">
+        <img src="images/artists/luna-profile.jpg" alt="Luna 프로필 사진" class="profile-image">
+        <div class="profile-info">
+            <h1 class="artist-name english">Luna</h1>
+            <p class="artist-genre">Indie Pop</p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">생년월일</div>
+                    <div class="info-value">1998년 7월 15일</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">데뷔일</div>
+                    <div class="info-value">2024년 3월 15일</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">출신지</div>
+                    <div class="info-value">서울, 대한민국</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">활동 장르</div>
+                    <div class="info-value">Indie Pop, Dream Pop, Alternative</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Artist Description -->
+    <section class="artist-description">
+        <h2 class="description-title">아티스트 소개</h2>
+        <p class="description-text">
+            Luna는 감성적인 인디팝 사운드로 주목받고 있는 신예 아티스트입니다. 
+            어린 시절부터 음악에 대한 열정을 품어왔으며, 대학에서 음악학을 전공하면서 본격적인 음악적 정체성을 확립했습니다.
+            <br><br>
+            그녀의 음악은 일상 속에서 마주하는 소소한 감정들을 섬세하게 담아내는 것이 특징입니다. 
+            몽환적인 멜로디와 따뜻한 목소리, 그리고 진솔한 가사로 듣는 이들의 마음을 어루만지며, 
+            특히 밤의 정적 속에서 피어나는 내면의 이야기들을 음악으로 그려내는 데 탁월한 재능을 보여줍니다.
+            <br><br>
+            데뷔 앨범 'Midnight Stories'는 그녀만의 독특한 음악적 색깔을 보여주는 작품으로, 
+            인디 음악 씬에서 큰 화제를 모으며 많은 리스너들에게 깊은 인상을 남겼습니다.
+        </p>
+    </section>
+
+    <!-- Discography -->
+    <section class="discography">
+        <h2 class="section-title">발매 음반</h2>
+        <div class="albums-grid">
+            <a href="albums/cosmopolitan.html" class="album-card">
+                <img src="images/albums/midnight-stories.jpg" alt="Midnight Stories Album Cover" class="album-cover">
+                <div class="album-info">
+                    <h3 class="album-title english">cosmopolitan</h3>
+                    <p class="album-date">2024년 11월 27일</p>
+                    <span class="album-genre">데뷔 앨범</span>
+                </div>
+            </a>
+            
+            <a href="album-luna-single1.html" class="album-card">
+                <img src="images/albums/dreamy-nights.jpg" alt="Dreamy Nights Single Cover" class="album-cover">
+                <div class="album-info">
+                    <h3 class="album-title english">Dreamy Nights</h3>
+                    <p class="album-date">2024년 6월 10일</p>
+                    <span class="album-genre">싱글</span>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 ONB Records. All rights reserved.</p>
+    <p class="english">On the B-side, Beyond the Mainstream</p>
+</footer>
+```
+
+</body>
+</html>
